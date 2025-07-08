@@ -80,3 +80,23 @@ function averageSleep(data) {
   }
   return totalSleep / 7;
 }
+
+function mostFrequentMood(data) {
+  const moodCounts = {};
+  for (let entry of data) {
+    if (!moodCounts[entry.mood]) {
+      moodCounts[entry.mood] = 1;
+    } else {
+      moodCounts[entry.mood]++;
+    }
+  }
+  let maxMood = null;
+  let maxCount = 0;
+  for (let mood in moodCounts) {
+    if (moodCounts[mood] > maxCount) {
+      maxMood = mood;
+      maxCount = moodCounts[mood];
+    }
+  }
+  return maxMood;
+}
