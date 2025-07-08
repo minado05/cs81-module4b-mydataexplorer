@@ -63,3 +63,13 @@ const weekData = [
 - Best focus day is Sunday
 - More caffeine does help a little bit 
 */
+
+function findHighestScreenTime(data) {
+  let maxTime = 0;
+  for (let entry of data) {
+    if (entry.screenTime > maxTime) {
+      maxTime = entry.screenTime;
+    }
+  }
+  return maxTime;
+}
