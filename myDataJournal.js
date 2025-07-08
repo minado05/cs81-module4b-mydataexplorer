@@ -73,3 +73,10 @@ function findHighestScreenTime(data) {
   }
   return maxTime;
 }
+function averageSleep(data) {
+  let totalSleep = 0;
+  for (let entry of data) {
+    totalSleep += entry.sleepHours;
+  }
+  return totalSleep / 7;
+}
