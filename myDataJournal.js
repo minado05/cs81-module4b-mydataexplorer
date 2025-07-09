@@ -100,3 +100,14 @@ function mostFrequentMood(data) {
   }
   return maxMood;
 }
+
+function correlateCaffeineToFocus(data) {
+  let coffeeCups = {};
+  for (let entry of data) {
+    let cup = entry.caffeineIntake;
+    let focus = entry.focusLevel;
+    if (!coffeeCups[cup]) {
+      coffeeCups[cup].push(focus);
+    }
+  }
+}
